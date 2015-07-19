@@ -1,8 +1,5 @@
 package com.epam.gmail.pages;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
@@ -58,6 +55,9 @@ public class ForwardPage extends Page{
 	@FindBy(xpath = "//span[contains(text(),'Просмотреть настройки')]")
 	private WebElement buttonViewSettings;
 	
+	@FindBy(xpath = ".//span//option[@value='2']")
+	private WebElement buttonFFFFFFFFFFFFF;
+	
 	public ForwardPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(this.driver, this);
@@ -76,16 +76,8 @@ public class ForwardPage extends Page{
 	}
 	
 	public void deleteForwardUser(){
-		buttonChooseActionForwardCopy.click();
-		try {
-			Robot robot = new Robot();
-			robot.keyPress(KeyEvent.VK_DOWN);
-			robot.keyPress(KeyEvent.VK_DOWN);
-			robot.keyPress(KeyEvent.VK_ENTER);
-		} catch (AWTException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		buttonFFFFFFFFFFFFF.click();
+		clickOK();
 		DriverUtils.waitElementVisible(driver, messageDeleteForwardUser, 100);
 		
 	}

@@ -6,13 +6,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 
-import org.apache.xml.serializer.utils.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.epam.gmail.utils.DriverUtils;
+
 public class MessagePage extends Page {
 	
 	private final static String URL = "https://mail.google.com/mail";

@@ -4,7 +4,6 @@ import java.awt.AWTException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -148,7 +147,6 @@ public class UserAction {
 	public void deleteForwardUser(){
 		ForwardPage forwardPage = new ForwardPage(driver);
 		forwardPage.deleteForwardUser();
-		forwardPage.clickOK();
 	}
 
 	public void clickRadioButtonForwardCopy(){

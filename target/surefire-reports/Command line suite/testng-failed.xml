@@ -5,9 +5,9 @@
     <classes>
       <class name="com.epam.test_gmail.LetterFromUser1InSpamTest">
         <methods>
-          <include name="checkLetterGoToSpam"/>
           <include name="stopBrowser"/>
           <include name="setUp"/>
+          <include name="checkLetterGoToSpam"/>
         </methods>
       </class> <!-- com.epam.test_gmail.LetterFromUser1InSpamTest -->
     </classes>

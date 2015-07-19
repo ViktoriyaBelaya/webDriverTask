@@ -12,7 +12,7 @@ import com.epam.gmail.user_action.UserAction;
 public class App 
 {
 	
-	
+	//
     public static void main( String[] args )
     {
     	  ResourceBundle resource = ResourceBundle.getBundle("com.epam.gmail.resource.users");

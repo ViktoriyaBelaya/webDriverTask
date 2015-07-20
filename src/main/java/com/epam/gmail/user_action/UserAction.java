@@ -17,6 +17,7 @@ import com.epam.gmail.pages.MainPage;
 import com.epam.gmail.pages.MessagePage;
 import com.epam.gmail.pages.SettingsPage;
 import com.epam.gmail.pages.SpamPage;
+import com.epam.gmail.pages.ThemesPage;
 import com.epam.gmail.pages.TrashPage;
 
 public class UserAction {
@@ -228,6 +229,19 @@ public class UserAction {
 
 		SettingsPage settings = new SettingsPage(driver);
 		settings.openPage();
+	}
+	
+	public void goToThemesPage(){
+		ThemesPage themesPage = new ThemesPage(driver);
+		themesPage.openPage();
+	}
+	
+	public void UploadPhotos(){
+		ThemesPage themesPage = new ThemesPage(driver);
+		themesPage.clickLinkSettingThemes();
+		themesPage.clickButtonMyFhoto();
+		themesPage.goToUploadFhoto();
+		themesPage.clickButtonChooseFhotoFromCompute();
 	}
 
 	public void addForwardUser(String user) {

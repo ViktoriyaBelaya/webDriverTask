@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage extends Page {
 	private final static String URL = "https://mail.google.com/mail";
+	
 
 	@FindBy(xpath = "//div[contains(text(),'НАПИСАТЬ')]")
 	private WebElement buttonWriteMail;
@@ -25,7 +26,6 @@ public class MainPage extends Page {
 		PageFactory.initElements(this.driver, this);
 		// TODO Auto-generated constructor stub
 	}
-	
 	public void clickButtonWriteMail(){
 		buttonWriteMail.click();
 	}

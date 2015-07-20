@@ -121,8 +121,27 @@ public class UserAction {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		if(sendMessage.isMessageSizeFilePresent())
 		sendMessage.sendMessage();
 		System.out.println("Message send");
+	}
+	
+	public void createMessageWithBigFile(String user,long size,String subject, String message){
+		MainPage mainPage = new MainPage(driver);
+		MessagePage sendMessage = new MessagePage(driver);
+		sendMessage.openPage();
+		mainPage.clickButtonWriteMail();
+		sendMessage.writeMassege(driver, user);
+		sendMessage.enterSubjectAndBobyOfLetter(subject, message);
+		try {
+			sendMessage.attachFile(size);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void goToSendBox(){
@@ -223,6 +242,10 @@ public class UserAction {
 		messagePage.confirmForwardFromUser();
 		
 	}
+	 public boolean isMessageBiggerThen25mb(){
+		 MessagePage messagePage = new MessagePage(driver);
+		return messagePage.isMessageSizeFilePresent();	
+	 }
 	public void clickRadioBtnFrwCopy(){
 		ForwardPage forwardPage = new ForwardPage(driver);
 		forwardPage.clickRadioButtonForwardCopy();

@@ -22,6 +22,7 @@ public class MessagePage extends Page {
 	private final static String LOADING_BAR_WHEN_ATTACHED_FILE = "//div[@class='dR']";
 	private final static String TOPIC_OF_THE_LETTER = "//div[@class='y6']/span/b[contains(text(),'%s')]";
 	private final static String IMAGE_ATTACHMENT = "//img[@alt='Attachments']";
+	private final static String errorMessageAboutBigSizeFile = "//span[@class='Kj-JD-K7-K0'][contains(text(),'25')]";
 	
 	@FindBy(xpath = "//span[contains(text(),'Просмотреть настройки')]")
 	private WebElement buttonViewSettings;
@@ -76,6 +77,10 @@ public class MessagePage extends Page {
 	
 	@FindBy(xpath = "//div[@class='ajB gt']")
 	private WebElement infoAboutLetter;
+	
+	@FindBy(xpath = "//button[@name='cancel']")
+	private WebElement buttonCancelMessageAboutBiggerSizeFile;
+
 	
 	
 	public MessagePage(WebDriver driver) {
@@ -189,6 +194,13 @@ public class MessagePage extends Page {
 		return false;
 	}
 	
+	public boolean isMessageSizeFilePresent(){
+		boolean present = false;
+		if(DriverUtils.isElementPresent(driver, errorMessageAboutBigSizeFile)){
+			present = true;
+		}
+		return present;
+	}
 	@Override
 	public void openPage() {
 		driver.navigate().to(URL);

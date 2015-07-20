@@ -18,8 +18,6 @@ import com.epam.gmail.pages.MessagePage;
 import com.epam.gmail.pages.SettingsPage;
 import com.epam.gmail.pages.SpamPage;
 import com.epam.gmail.pages.TrashPage;
-import com.epam.gmail.utils.DriverUtils;
-import com.sun.xml.internal.ws.resources.SenderMessages;
 
 public class UserAction {
 	WebDriver driver;

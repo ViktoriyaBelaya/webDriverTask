@@ -1,10 +1,6 @@
 package com.epam.test_gmail;
 
-import java.awt.AWTException;
-import java.io.File;
-
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 

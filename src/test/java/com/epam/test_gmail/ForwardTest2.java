@@ -13,45 +13,36 @@ import com.epam.gmail.utils.DriverUtils;
 public class ForwardTest2 extends BaseTest {
 	@Test
 	public void forward() throws IOException, AWTException {
-		boolean status = true;
 		String subject = DriverUtils.getRandomString(10);
 		String message = DriverUtils.getRandomString(100);
 		String subjectWithAttach = DriverUtils.getRandomString(10);
 		String messageWithAttach = DriverUtils.getRandomString(100);
-DriverUtils.deleteFile(new File("file.txt"));
-//		userAction.loginUser(user2, password);
-//		userAction.goToSetting();
-//		userAction.addForwardUser(user3);
-//		userAction.deleteAllCookies();
-//		System.out.println("step 1");
-//		userAction.loginUser(user3, password);
-//		userAction.confirmForwardUser();
-//		userAction.deleteAllCookies();
-//		System.out.println("step 2");
-//		userAction.loginUser(user2, password);
-//		userAction.goToForwardPage();
-//		System.out.println("step 3");
-//		userAction.clickRadioBtnFrwCopy();
-//		System.out.println("step 4");
-//		userAction.createNewFilter(user1);
-//		System.out.println("step 5");
-//		userAction.deleteAllCookies();
-//		System.out.println("step 6");
+		DriverUtils.deleteFile(new File("file.txt"));
+		userAction.loginUser(user2, password);
+		userAction.goToSetting();
+		userAction.addForwardUser(user3);
+		userAction.deleteAllCookies();
+		userAction.loginUser(user3, password);
+		userAction.confirmForwardUser();
+		userAction.deleteAllCookies();
+		userAction.loginUser(user2, password);
+		userAction.goToForwardPage();
+		userAction.clickRadioBtnFrwCopy();
+		userAction.createNewFilter(user1);
+		userAction.deleteAllCookies();
 		userAction.loginUser(user1, password);
-		userAction.sendMessageWithAttachFile(user2, 17,subjectWithAttach, messageWithAttach);
-		userAction.sendMessage(user2,subject, message);
+		userAction.sendMessageWithAttachFile(user2, 17, subjectWithAttach,
+				messageWithAttach);
+		userAction.sendMessage(user2, subject, message);
 		userAction.deleteAllCookies();
 		userAction.loginUser(user2, password);
 		userAction.goToTrashPage();
-		Assert.assertTrue(userAction.isMessageWithAttachInTrash(subjectWithAttach));
-
+		Assert.assertTrue(userAction
+				.isMessageWithAttachInTrash(subjectWithAttach));
 		userAction.goToMail();
-		if (userAction.isMessageWithAttachInTrash(subjectWithAttach)) {
-			System.out.println("Success. There is letter from user1 without attach and not mark as important in inbox");
-		} else {
-			status = false;
-			System.out.println("Error.There is letter from user1 without attach and not mark as important in inbox");
-		}
+		Assert.assertTrue(userAction
+				.isMessageWithAttachInTrash(subjectWithAttach));
+
 	}
 
 	@AfterClass

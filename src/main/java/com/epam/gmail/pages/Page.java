@@ -8,9 +8,8 @@ public abstract class Page {
 
 	public abstract void openPage();
 
-	public Page(WebDriver driver) {		
-		this.driver = driver;	
-		//driver.manage().window().maximize();
+	public Page(WebDriver driver) {
+		this.driver = driver;
 	}
 
 }

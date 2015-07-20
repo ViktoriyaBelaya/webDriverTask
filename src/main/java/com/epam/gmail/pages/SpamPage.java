@@ -12,16 +12,16 @@ public class SpamPage extends Page {
 	private final static String SPAM_URL = "https://mail.google.com/mail/#spam";
 	@FindBy(xpath = "//span[@email='oollggaa1992@gmail.com']")
 	private WebElement spamMessage;
-	
+
 	@FindBy(xpath = "//button[@name='ok']")
 	private WebElement buttonOK;
-	
+
 	@FindBy(xpath = "//span[@role='checkbox']/div[@role='presentation']")
 	private WebElement checkSelectAll;
-	
+
 	@FindBy(xpath = "//div[@role='button'][contains(text(),'Не спам')]")
 	private WebElement buttonNoSpam;
-	
+
 	@FindBy(xpath = "//span[contains(text(),'Отметка спама снята с цепочек')]")
 	private WebElement infoMessageNoSpam;
 
@@ -33,17 +33,17 @@ public class SpamPage extends Page {
 	public boolean isLetterInSpam() {
 		return DriverUtils.isElementPresent(driver,
 				"//span[@email='oollggaa1992@gmail.com']");
-		//"//span[@email='oollggaa1992@gmail.com']"
 	}
-	public void clickOK(){
+
+	public void clickOK() {
 		buttonOK.click();
 	}
-	
-	public void selectAllSpamMessage(){
+
+	public void selectAllSpamMessage() {
 		checkSelectAll.click();
 	}
-	
-	public void makeAllMessageNoSpam(){
+
+	public void makeAllMessageNoSpam() {
 		DriverUtils.waitElementVisible(driver, buttonNoSpam, 80);
 		buttonNoSpam.click();
 		DriverUtils.waitElementVisible(driver, infoMessageNoSpam, 100);

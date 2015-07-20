@@ -37,7 +37,7 @@ public class UserAction {
 	}
 
 	public void deleteAllCookies() {
-	 WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		try {
 			wait.until((ExpectedCondition<Boolean>) new ExpectedCondition<Boolean>() {
 				public Boolean apply(final WebDriver d) {
@@ -60,24 +60,25 @@ public class UserAction {
 			driver.manage().deleteAllCookies();
 			driver.navigate().refresh();
 		} while (driver.manage().getCookieNamed("LSID") != null);
-		
+
 	}
-	
+
 	public void goToTrashPage() {
 		TrashPage trashPage = new TrashPage(driver);
 		trashPage.openPage();
 		System.out.println("The trash page was opened");
 	}
-	
-	public boolean isLetterFromUser1WithAttachInTrash(String subject) {
+
+	public boolean isMessageWithAttachInTrash(String subject) {
 		TrashPage trashPage = new TrashPage(driver);
-		return trashPage.isLetterFromUser1WithAttachInTrash(subject);
+		return trashPage.isMessageWithAttachInTrash(subject);
 	}
-	
-	public boolean isLetterFromUser1WithoutAttachInInboxAndNotMArkAsImportant(
+
+	public boolean isMessageWithoutAttachInInboxAndNotMArkAsImportant(
 			String subject) {
-		MessagePage mailPage = new MessagePage(driver);
-		return mailPage.isLetterFromUser1WithoutAttachInInboxAndNotMArkAsImportant(subject);
+		MessagePage messagePage = new MessagePage(driver);
+		messagePage.openPage();
+		return messagePage.isMessageWithoutAttachInTrash(subject);
 
 	}
 
@@ -87,15 +88,15 @@ public class UserAction {
 		loginPage.loginUser(login, password);
 		System.out.println("Login performed");
 	}
-	
-	public void makeAllMessegNoSpam(){
+
+	public void makeAllMessegNoSpam() {
 		SpamPage spamPage = new SpamPage(driver);
 		spamPage.openPage();
 		spamPage.selectAllSpamMessage();
 		spamPage.makeAllMessageNoSpam();
 	}
 
-	public void sendMessage(String user,String subject, String message) {
+	public void sendMessage(String user, String subject, String message) {
 		MainPage mainPage = new MainPage(driver);
 		MessagePage sendMessage = new MessagePage(driver);
 		sendMessage.openPage();
@@ -105,7 +106,9 @@ public class UserAction {
 		sendMessage.sendMessage();
 		System.out.println("Message send");
 	}
-	public void sendMessageWithAttachFile(String user,long size,String subject, String message) {
+
+	public void sendMessageWithAttachFile(String user, long size,
+			String subject, String message) {
 		MainPage mainPage = new MainPage(driver);
 		MessagePage sendMessage = new MessagePage(driver);
 		sendMessage.openPage();
@@ -121,12 +124,13 @@ public class UserAction {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(sendMessage.isMessageSizeFilePresent())
-		sendMessage.sendMessage();
+		if (sendMessage.isMessageSizeFilePresent())
+			sendMessage.sendMessage();
 		System.out.println("Message send");
 	}
-	
-	public void createMessageWithBigFile(String user,long size,String subject, String message){
+
+	public void createMessageWithBigFile(String user, long size,
+			String subject, String message) {
 		MainPage mainPage = new MainPage(driver);
 		MessagePage sendMessage = new MessagePage(driver);
 		sendMessage.openPage();
@@ -143,29 +147,30 @@ public class UserAction {
 			e.printStackTrace();
 		}
 	}
-	
-	public void goToSendBox(){
+
+	public void goToSendBox() {
 		MainPage mainPage = new MainPage(driver);
 		mainPage.openPage();
 		mainPage.goToSendFolder();
 	}
-	public void clickViewSettings(){
+
+	public void clickViewSettings() {
 		ForwardPage page = new ForwardPage(driver);
 		page.cliclViewSettingsAfterSave();
 	}
-	
-	public void goToMail(){
+
+	public void goToMail() {
 		MainPage mainPage = new MainPage(driver);
 		mainPage.openPage();
 	}
-	
-	public void deleteAllMessages(){
+
+	public void deleteAllMessages() {
 		MessagePage message = new MessagePage(driver);
 		message.selectAll();
 		message.clickDeleteButtonMessage();
 	}
-	
-	public void deleteAllSendMessages(){
+
+	public void deleteAllSendMessages() {
 		MessagePage message = new MessagePage(driver);
 		message.selectAll();
 		message.clickDeleteButtonMessage();
@@ -188,20 +193,22 @@ public class UserAction {
 		spamPage.openPage();
 		return spamPage.isLetterInSpam();
 	}
-	public void deleteForwardUser(){
+
+	public void deleteForwardUser() {
 		ForwardPage forwardPage = new ForwardPage(driver);
 		forwardPage.deleteForwardUser();
 	}
 
-	public void clickRadioButtonForwardCopy(){
+	public void clickRadioButtonForwardCopy() {
 		ForwardPage forwardPage = new ForwardPage(driver);
 		forwardPage.openPage();
 		forwardPage.clickRadioButtonForwardCopy();
 	}
-	public void createNewFilter(String user){
+
+	public void createNewFilter(String user) {
 		SettingsPage settings = new SettingsPage(driver);
 		settings.goToFilter();
-		FilterPage filter = new FilterPage(driver);	
+		FilterPage filter = new FilterPage(driver);
 		filter.clickCreateNewFilter();
 		filter.enterInputFromFilter(user);
 		filter.clickCheckboxHasAttachment();
@@ -210,69 +217,72 @@ public class UserAction {
 		filter.clickCheckboxMarkAsImportant();
 		filter.clickCreateFilter();
 	}
-	public void goToSettingMenu(){
+
+	public void goToSettingMenu() {
 
 		MainPage mainPage = new MainPage(driver);
 		mainPage.clickButtonSettings();
 		SettingsPage settings = new SettingsPage(driver);
 		settings.openPage();
 	}
-	
-	public void goToSetting(){
+
+	public void goToSetting() {
 
 		SettingsPage settings = new SettingsPage(driver);
 		settings.openPage();
 	}
 
-	public void addForwardUser(String user){
+	public void addForwardUser(String user) {
 		ForwardPage forwardPage = new ForwardPage(driver);
 		forwardPage.openPage();
-		forwardPage.setForwardUser(user);	
+		forwardPage.setForwardUser(user);
 		forwardPage.saveForwardChange();
 	}
-	
-	public void clickButtonOkForward(){
+
+	public void clickButtonOkForward() {
 		ForwardPage forwardPage = new ForwardPage(driver);
 		forwardPage.clickOK();
 	}
-	
-	public void confirmForwardUser(){
+
+	public void confirmForwardUser() {
 		MessagePage messagePage = new MessagePage(driver);
 		messagePage.openPage();
 		messagePage.confirmForwardFromUser();
-		
+
 	}
-	 public boolean isMessageBiggerThen25mb(){
-		 MessagePage messagePage = new MessagePage(driver);
-		return messagePage.isMessageSizeFilePresent();	
-	 }
-	public void clickRadioBtnFrwCopy(){
+
+	public boolean isMessageBiggerThen25mb() {
+		MessagePage messagePage = new MessagePage(driver);
+		return messagePage.isMessageSizeFilePresent();
+	}
+
+	public void clickRadioBtnFrwCopy() {
 		ForwardPage forwardPage = new ForwardPage(driver);
 		forwardPage.clickRadioButtonForwardCopy();
 		forwardPage.saveForwardChange();
 		forwardPage.cliclViewSettingsAfterSave();
 	}
-	public void goToForwardPage(){
+
+	public void goToForwardPage() {
 		ForwardPage forwardPage = new ForwardPage(driver);
 		forwardPage.openPage();
 	}
 
-	public void goToForwardPageInSetting(){
+	public void goToForwardPageInSetting() {
 		SettingsPage settings = new SettingsPage(driver);
 		settings.goToForwardpage();
 	}
-	
-	public void goToFilterPage(){
-		FilterPage filter = new FilterPage(driver);	
+
+	public void goToFilterPage() {
+		FilterPage filter = new FilterPage(driver);
 		filter.openPage();
 	}
-	
-	public void deleteAllFilters(){
-		FilterPage filter = new FilterPage(driver);	
+
+	public void deleteAllFilters() {
+		FilterPage filter = new FilterPage(driver);
 		filter.openPage();
 		filter.selectAllFilters();
 		filter.deleteAllFilters();
 	}
-	
 
 }

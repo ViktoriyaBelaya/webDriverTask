@@ -7,17 +7,16 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage extends Page {
 	private final static String URL = "https://mail.google.com/mail";
-	
 
 	@FindBy(xpath = "//div[contains(text(),'НАПИСАТЬ')]")
 	private WebElement buttonWriteMail;
-	
+
 	@FindBy(xpath = "//div[@class='Cr aqJ']/div[@class='G-Ni J-J5-Ji']/div")
 	private WebElement buttonSettings;
-	
+
 	@FindBy(xpath = "//div[@role='menuitem']/div[contains(text(),'Настройки')]")
 	private WebElement menuItemSettings;
-	
+
 	@FindBy(xpath = "//a[@href='https://mail.google.com/mail/u/0/#sent']")
 	private WebElement letterInSend;
 
@@ -26,18 +25,19 @@ public class MainPage extends Page {
 		PageFactory.initElements(this.driver, this);
 		// TODO Auto-generated constructor stub
 	}
-	public void clickButtonWriteMail(){
+
+	public void clickButtonWriteMail() {
 		buttonWriteMail.click();
 	}
-	public void clickButtonSettings(){
+
+	public void clickButtonSettings() {
 		buttonSettings.click();
 		menuItemSettings.click();
 	}
-	public void goToSendFolder(){
+
+	public void goToSendFolder() {
 		letterInSend.click();
 	}
-	
-	
 
 	@Override
 	public void openPage() {

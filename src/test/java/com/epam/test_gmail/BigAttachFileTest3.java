@@ -13,7 +13,6 @@ import com.epam.gmail.utils.DriverUtils;
 
 public class BigAttachFileTest3 extends BaseTest {
 
-
 	@AfterClass(description = "Delete generated file")
 	public void afterClass() {
 		DriverUtils.deleteFile(new File("file.txt"));
@@ -25,8 +24,8 @@ public class BigAttachFileTest3 extends BaseTest {
 		String subjectWithAttach = DriverUtils.getRandomString(10);
 		String messageWithAttach = DriverUtils.getRandomString(100);
 		userAction.loginUser(user1, password);
-		userAction.createMessageWithBigFile(user2, 1024 * 1024 * 26, subjectWithAttach,
-				messageWithAttach);
+		userAction.createMessageWithBigFile(user2, 1024 * 1024 * 26,
+				subjectWithAttach, messageWithAttach);
 		Assert.assertTrue(userAction.isMessageBiggerThen25mb());
 		userAction.deleteAllCookies();
 	}

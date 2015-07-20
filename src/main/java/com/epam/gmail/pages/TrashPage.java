@@ -11,8 +11,11 @@ import com.epam.gmail.utils.DriverUtils;
 
 public class TrashPage extends Page {
 
-	private final String BASE_URL = "https://mail.google.com/mail/#trash";
+	private final static String BASE_URL = "https://mail.google.com/mail/#trash";
+	private final static String INFO_ABOUT_IMPORTANT = "//span[contains(text(),'Отмечено как важное')]";
+	private final static String TOPIC_OF_THE_LETTER = "//div[@class='y6']/span/b[contains(text(),'%s')]";
 
+	private final static String IMAGE_ATTACHMENT = "//img[@alt='Прикрепленные файлы']";
 	@FindBy(xpath = "//div[@class='yW']/span[@class='zF'][ancestor::div[@class='ae4 UI UJ']]")
 	private WebElement newLetter;
 
@@ -22,9 +25,8 @@ public class TrashPage extends Page {
 	@FindBy(xpath = "//div[@class='ajB gt']")
 	private WebElement infoAboutLetter;
 
-	private final static String TOPIC_OF_THE_LETTER = "//div[@class='y6']/span/b[contains(text(),'%s')]";
-
-	private final static String IMAGE_ATTACHMENT = "//img[@alt='Attachments']";
+	@FindBy(xpath = "//span[contains(text(),'Отмечено как важное')]")
+	private WebElement infoMessageIsImportant;
 
 	public TrashPage(WebDriver driver) {
 		super(driver);
@@ -32,29 +34,39 @@ public class TrashPage extends Page {
 
 	}
 
-	public boolean isLetterFromUser1WithAttachInTrash(String subject)
+	public boolean isMessageWithAttachInTrash(String subject) {
 
-	{	int i = 0;
 		while (DriverUtils.isElementNotPresent(driver,
 				String.format(TOPIC_OF_THE_LETTER, subject))) {
 			driver.navigate().refresh();
-			i++;
-			if (i == 12) {
-				System.out.println("There are not new message more then 2 minutes!!!");
-				Assert.fail();
-			}
 		}
-		WebElement letter = driver.findElement(By.xpath(String.format(
+		WebElement message = driver.findElement(By.xpath(String.format(
 				TOPIC_OF_THE_LETTER, subject)));
-
-		letter.click();
+		message.click();
 		if (DriverUtils.isElementPresent(driver, IMAGE_ATTACHMENT)) {
 			imgInfoAboutLetter.click();
-			if (infoAboutLetter.getText().contains("Important")) {
+			if (DriverUtils.isElementNotPresent(driver, INFO_ABOUT_IMPORTANT)) {
 				return true;
 			}
 		}
+		return false;
+	}
 
+	public boolean isMessageWithoutAttachInTrash(String subject) {
+
+		while (DriverUtils.isElementNotPresent(driver,
+				String.format(TOPIC_OF_THE_LETTER, subject))) {
+			driver.navigate().refresh();
+		}
+		WebElement message = driver.findElement(By.xpath(String.format(
+				TOPIC_OF_THE_LETTER, subject)));
+		message.click();
+		if (DriverUtils.isElementNotPresent(driver, IMAGE_ATTACHMENT)) {
+			imgInfoAboutLetter.click();
+			if (DriverUtils.isElementNotPresent(driver, INFO_ABOUT_IMPORTANT)) {
+				return true;
+			}
+		}
 		return false;
 	}
 

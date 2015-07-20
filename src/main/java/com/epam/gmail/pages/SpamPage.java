@@ -15,6 +15,15 @@ public class SpamPage extends Page {
 	
 	@FindBy(xpath = "//button[@name='ok']")
 	private WebElement buttonOK;
+	
+	@FindBy(xpath = "//span[@role='checkbox']/div[@role='presentation']")
+	private WebElement checkSelectAll;
+	
+	@FindBy(xpath = "//div[@role='button'][contains(text(),'Не спам')]")
+	private WebElement buttonNoSpam;
+	
+	@FindBy(xpath = "//span[contains(text(),'Отметка спама снята с цепочек')]")
+	private WebElement infoMessageNoSpam;
 
 	public SpamPage(WebDriver driver) {
 		super(driver);
@@ -28,6 +37,16 @@ public class SpamPage extends Page {
 	}
 	public void clickOK(){
 		buttonOK.click();
+	}
+	
+	public void selectAllSpamMessage(){
+		checkSelectAll.click();
+	}
+	
+	public void makeAllMessageNoSpam(){
+		DriverUtils.waitElementVisible(driver, buttonNoSpam, 80);
+		buttonNoSpam.click();
+		DriverUtils.waitElementVisible(driver, infoMessageNoSpam, 100);
 	}
 
 	@Override

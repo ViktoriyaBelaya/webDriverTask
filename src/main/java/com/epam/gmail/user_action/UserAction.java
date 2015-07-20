@@ -69,11 +69,14 @@ public class UserAction {
 		System.out.println("Login performed");
 	}
 	
-	
+	public void makeAllMessegNoSpam(){
+		SpamPage spamPage = new SpamPage(driver);
+		spamPage.openPage();
+		spamPage.selectAllSpamMessage();
+		spamPage.makeAllMessageNoSpam();
+	}
 
-	public void sendMessage(String user) {
-		String subject = DriverUtils.getRandomString(10);
-		String message = DriverUtils.getRandomString(100);
+	public void sendMessage(String user,String subject, String message) {
 		MainPage mainPage = new MainPage(driver);
 		MessagePage sendMessage = new MessagePage(driver);
 		sendMessage.openPage();
@@ -83,9 +86,7 @@ public class UserAction {
 		sendMessage.sendMessage();
 		System.out.println("Message send");
 	}
-	public void sendMessageWithAttachFile(String user,long size) {
-		String subject = DriverUtils.getRandomString(10);
-		String message = DriverUtils.getRandomString(100);
+	public void sendMessageWithAttachFile(String user,long size,String subject, String message) {
 		MainPage mainPage = new MainPage(driver);
 		MessagePage sendMessage = new MessagePage(driver);
 		sendMessage.openPage();

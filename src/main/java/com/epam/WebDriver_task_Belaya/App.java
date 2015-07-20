@@ -35,7 +35,5 @@ public class App
     	action.createNewFilter(user1);
     	action.deleteAllCookies();
     	action.loginUser(user1, password);
-    	action.sendMessageWithAttachFile(user2, 17);
-    	action.sendMessage(user1);
     }
 }

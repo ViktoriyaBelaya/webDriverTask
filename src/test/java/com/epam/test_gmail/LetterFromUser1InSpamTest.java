@@ -36,6 +36,7 @@ public class LetterFromUser1InSpamTest extends BaseTest {
 		userAction.deleteAllCookies();
 		userAction.loginUser(user2, password);
 		userAction.makeAllMessegNoSpam();
+		userAction.deleteAllCookies();
 		userAction.closeDriver();
 
 	}

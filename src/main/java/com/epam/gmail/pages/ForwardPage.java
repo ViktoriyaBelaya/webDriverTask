@@ -43,12 +43,6 @@ public class ForwardPage extends Page{
 	@FindBy(xpath = "//span[contains(text(),'Пересылать копии входящих сообщений на адреса')]/select")
 	private WebElement buttonChooseActionForwardCopy;
 	
-	@FindBy(xpath = "//span[contains(text(),'Пересылать копии входящих сообщений на адреса')]/select[1]/option[@value='2']")
-	private WebElement buttonDeleteForwardUser1;
-	
-	@FindBy(xpath = "//span[@act='removeAddr' ]")
-	private WebElement buttonDeleteForwardUser2;
-	
 	@FindBy(xpath = "//div[contains(text(),'Адрес пересылки vviikkttoorriiyyaa1@gmail.com удален.')]")
 	private WebElement messageDeleteForwardUser;
 	
@@ -56,7 +50,7 @@ public class ForwardPage extends Page{
 	private WebElement buttonViewSettings;
 	
 	@FindBy(xpath = ".//span//option[@value='2']")
-	private WebElement buttonFFFFFFFFFFFFF;
+	private WebElement buttonDeleteForwardUser;
 	
 	public ForwardPage(WebDriver driver) {
 		super(driver);
@@ -76,7 +70,7 @@ public class ForwardPage extends Page{
 	}
 	
 	public void deleteForwardUser(){
-		buttonFFFFFFFFFFFFF.click();
+		buttonDeleteForwardUser.click();
 		clickOK();
 		DriverUtils.waitElementVisible(driver, messageDeleteForwardUser, 100);
 		
@@ -86,8 +80,6 @@ public class ForwardPage extends Page{
 		DriverUtils.waitElementVisible(driver, buttonViewSettings, 100);
 		buttonViewSettings.click();
 	}
-	
-	
 	
 	public void setForwardUser(String user){
 		DriverUtils.waitElementVisible(driver, addForwardUser, 100);

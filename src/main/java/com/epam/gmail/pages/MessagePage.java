@@ -6,10 +6,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.epam.gmail.utils.DriverUtils;
 
@@ -17,6 +20,8 @@ public class MessagePage extends Page {
 	
 	private final static String URL = "https://mail.google.com/mail";
 	private final static String LOADING_BAR_WHEN_ATTACHED_FILE = "//div[@class='dR']";
+	private final static String TOPIC_OF_THE_LETTER = "//div[@class='y6']/span/b[contains(text(),'%s')]";
+	private final static String IMAGE_ATTACHMENT = "//img[@alt='Attachments']";
 	
 	@FindBy(xpath = "//span[contains(text(),'Просмотреть настройки')]")
 	private WebElement buttonViewSettings;
@@ -65,6 +70,13 @@ public class MessagePage extends Page {
 	
 	@FindBy(xpath = "//button[@name='ok']")
 	private WebElement buttonOK;
+	
+	@FindBy(xpath = "//img[@class='ajz']")
+	private WebElement imgInfoAboutLetter;
+	
+	@FindBy(xpath = "//div[@class='ajB gt']")
+	private WebElement infoAboutLetter;
+	
 	
 	public MessagePage(WebDriver driver) {
 		super(driver);
@@ -128,7 +140,11 @@ public class MessagePage extends Page {
 			}
 		}
 		driver.switchTo().window(childHandle).close();
+		System.out.println("close child handle");
+		WebDriverWait driverWait = new WebDriverWait(driver, 10);
 		driver.switchTo().window(parentHandle);
+		
+		
 	}
 	
 	public void attachFile(long size) throws IOException, AWTException {
@@ -142,6 +158,37 @@ public class MessagePage extends Page {
 		}
 
 	}
+	public boolean isLetterFromUser1WithoutAttachInInboxAndNotMArkAsImportant(
+			String subject)
+
+	{
+		int i = 0;
+		while (DriverUtils.isElementNotPresent(driver,
+				String.format(TOPIC_OF_THE_LETTER, subject))) {
+			driver.navigate().refresh();
+			i++;
+			if (i == 12) {
+				System.out.println("There are not new message more then 2 minutes!!!");
+				Assert.fail();
+			}
+		}
+		WebElement letter = driver.findElement(By.xpath(String.format(
+				TOPIC_OF_THE_LETTER, subject)));
+
+		letter.click();
+
+		if (DriverUtils.isElementNotPresent(driver, IMAGE_ATTACHMENT))
+
+		{
+			imgInfoAboutLetter.click();
+			if (!infoAboutLetter.getText().contains("Important")) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+	
 	@Override
 	public void openPage() {
 		driver.navigate().to(URL);

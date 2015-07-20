@@ -66,6 +66,7 @@ public class FilterPage extends Page{
 	
 	public void clickCreateFilter(){
 		buttonCreateFilter.click();
+		DriverUtils.waitElementVisible(driver, messageFilterCreate, 100);
 	}
 	
 	public void selectAllFilters(){

@@ -17,6 +17,7 @@ import com.epam.gmail.pages.MainPage;
 import com.epam.gmail.pages.MessagePage;
 import com.epam.gmail.pages.SettingsPage;
 import com.epam.gmail.pages.SpamPage;
+import com.epam.gmail.pages.TrashPage;
 import com.epam.gmail.utils.DriverUtils;
 import com.sun.xml.internal.ws.resources.SenderMessages;
 
@@ -60,6 +61,24 @@ public class UserAction {
 			driver.navigate().refresh();
 		} while (driver.manage().getCookieNamed("LSID") != null);
 		
+	}
+	
+	public void goToTrashPage() {
+		TrashPage trashPage = new TrashPage(driver);
+		trashPage.openPage();
+		System.out.println("The trash page was opened");
+	}
+	
+	public boolean isLetterFromUser1WithAttachInTrash(String subject) {
+		TrashPage trashPage = new TrashPage(driver);
+		return trashPage.isLetterFromUser1WithAttachInTrash(subject);
+	}
+	
+	public boolean isLetterFromUser1WithoutAttachInInboxAndNotMArkAsImportant(
+			String subject) {
+		MessagePage mailPage = new MessagePage(driver);
+		return mailPage.isLetterFromUser1WithoutAttachInInboxAndNotMArkAsImportant(subject);
+
 	}
 
 	public void loginUser(String login, String password) {
@@ -114,6 +133,11 @@ public class UserAction {
 	public void clickViewSettings(){
 		ForwardPage page = new ForwardPage(driver);
 		page.cliclViewSettingsAfterSave();
+	}
+	
+	public void goToMail(){
+		MainPage mainPage = new MainPage(driver);
+		mainPage.openPage();
 	}
 	
 	public void deleteAllMessages(){

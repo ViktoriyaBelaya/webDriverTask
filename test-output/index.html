@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Viktoryia_Belaya@epam.com\AppData\Local\Temp\testng-eclipse--103290644\testng-customsuite.xml</span>
+                    <span>C:\Users\Viktoryia_Belaya@epam.com\AppData\Local\Temp\testng-eclipse-1465357457\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -127,31 +127,12 @@
                   <a name="forward">
                   </a> <!-- forward -->
                   <span class="method-name">forward</span>
-                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: Element not found in the cache - perhaps the page has changed since it was looked up
-Command duration or timeout: 20.07 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
-System info: host: &apos;EPBYMINW3008&apos;, ip: &apos;10.6.102.67&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_40&apos;
-Session ID: d97bd016-e920-42a0-9254-786a009228c2
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:269)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:80)
-	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy8.click(Unknown Source)
-	at com.epam.gmail.pages.SettingsPage.goToFilter(SettingsPage.java:33)
-	at com.epam.gmail.user_action.UserAction.createNewFilter(UserAction.java:184)
-	at com.epam.test_gmail.ForwardTest2.forward(ForwardTest2.java:35)
+                  <div class="stack-trace">java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.fail(Assert.java:101)
+	at com.epam.gmail.pages.MessagePage.isLetterFromUser1WithoutAttachInInboxAndNotMArkAsImportant(MessagePage.java:172)
+	at com.epam.gmail.user_action.UserAction.isLetterFromUser1WithoutAttachInInboxAndNotMArkAsImportant(UserAction.java:80)
+	at com.epam.test_gmail.ForwardTest2.forward(ForwardTest2.java:57)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -176,17 +157,6 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.StaleElementReferenceException: Element not found in the cache - perhaps the page has changed since it was looked up
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
-System info: host: &apos;EPBYMINW3008&apos;, ip: &apos;10.6.102.67&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_40&apos;
-Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.fxdriver.cache.getElementAt(resource://fxdriver/modules/web-element-cache.js:8981)
-	at &lt;anonymous class&gt;.Utils.getElementAt(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous5435799006392351006webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:8574)
-	at &lt;anonymous class&gt;.fxdriver.preconditions.visible(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous5435799006392351006webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:9613)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.checkPreconditions_(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous5435799006392351006webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12265)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous5435799006392351006webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous5435799006392351006webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:603)
 
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -196,7 +166,7 @@ Driver info: driver.version: unknown
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Viktoryia_Belaya@epam.com\AppData\Local\Temp\testng-eclipse--103290644\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Viktoryia_Belaya@epam.com\AppData\Local\Temp\testng-eclipse-1465357457\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -249,12 +219,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'forward')
 data.setCell(0, 2, 'com.epam.test_gmail.ForwardTest2')
-data.setCell(0, 3, 69203);
+data.setCell(0, 3, 332780);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 5 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -289,15 +259,15 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">forward</span>
-                <span class="method-start">4643 ms</span>
+                <span class="method-start">4893 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">73860 ms</span>
+                <span class="method-start">337688 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">stopBrowser</span>
-                <span class="method-start">88317 ms</span>
+                <span class="method-start">355098 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

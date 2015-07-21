@@ -20,6 +20,7 @@ public class ThemesTest4 extends BaseTest {
 			userAction.loginUser(user1, password);
 			userAction.goToSettingMenu();
 			userAction.goToThemesPage();
+			userAction.UploadPhotos();
 		}
 	}
 }

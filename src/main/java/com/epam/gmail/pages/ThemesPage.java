@@ -42,6 +42,8 @@ public class ThemesPage extends Page{
 		linkSettingThemes.click();
 	}
 	
+	
+	
 	public void goToUploadFhoto(){
 		DriverUtils.waitElementVisible(driver, uploadFhoto, 50);
 		uploadFhoto.click();

@@ -17,7 +17,6 @@ public class ForwardTest2 extends BaseTest {
 		String message = DriverUtils.getRandomString(100);
 		String subjectWithAttach = DriverUtils.getRandomString(10);
 		String messageWithAttach = DriverUtils.getRandomString(100);
-		DriverUtils.deleteFile(new File("file.txt"));
 		userAction.loginUser(user2, password);
 		userAction.goToSetting();
 		userAction.addForwardUser(user3);

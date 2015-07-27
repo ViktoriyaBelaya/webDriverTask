@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Viktoryia_Belaya@epam.com\AppData\Local\Temp\testng-eclipse--1718908522\testng-customsuite.xml</span>
+                    <span>C:\Users\Viktoryia_Belaya@epam.com\AppData\Local\Temp\testng-eclipse--778385014\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -101,7 +101,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.epam.test_gmail.ThemesTest4$BigAttachFileTest3" hash-for-method="changeTheme">changeTheme</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.epam.test_gmail.ForwardTest2" hash-for-method="forward">forward</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -119,21 +119,19 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.epam.test_gmail.ThemesTest4$BigAttachFileTest3</span>
+              <span class="class-name">com.epam.test_gmail.ForwardTest2</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="changeTheme">
-                  </a> <!-- changeTheme -->
-                  <span class="method-name">changeTheme</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//iframe[@class=&apos;KA-JQ&apos;]&quot;}
-Command duration or timeout: 20.13 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+                  <a name="forward">
+                  </a> <!-- forward -->
+                  <span class="method-name">forward</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Command duration or timeout: 20.29 seconds
 Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
-System info: host: &apos;EPBYMINW3008&apos;, ip: &apos;10.6.102.67&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_40&apos;
-*** Element info: {Using=xpath, value=//iframe[@class=&apos;KA-JQ&apos;]}
-Session ID: 0a4eefba-5e0a-4da7-8691-29b7fbf464ea
+System info: host: &apos;EPBYMINW3008&apos;, ip: &apos;10.6.103.20&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_40&apos;
+Session ID: b923adf6-2715-4630-921c-f6822eb1577e
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -143,18 +141,17 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy8.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:49)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:894)
-	at com.epam.gmail.pages.ThemesPage.clickButtonMyFhoto(ThemesPage.java:58)
-	at com.epam.gmail.user_action.UserAction.UploadPhotos(UserAction.java:242)
-	at com.epam.test_gmail.ThemesTest4$BigAttachFileTest3.changeTheme(ThemesTest4.java:23)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:269)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy8.click(Unknown Source)
+	at com.epam.gmail.pages.ForwardPage.clickRadioButtonForwardCopy(ForwardPage.java:107)
+	at com.epam.gmail.user_action.UserAction.clickRadioBtnFrwCopy(UserAction.java:287)
+	at com.epam.test_gmail.ForwardTest2.forward(ForwardTest2.java:29)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -179,17 +176,16 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//iframe[@class=&apos;KA-JQ&apos;]&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Caused by: org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
 Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
-System info: host: &apos;EPBYMINW3008&apos;, ip: &apos;10.6.102.67&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_40&apos;
+System info: host: &apos;EPBYMINW3008&apos;, ip: &apos;10.6.103.20&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_40&apos;
 Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous692663330838091549webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous692663330838091549webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:603)
+	at &lt;anonymous class&gt;.fxdriver.preconditions.visible(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous5646230786037416535webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:9615)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.checkPreconditions_(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous5646230786037416535webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12265)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous5646230786037416535webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous5646230786037416535webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:603)
 
 </div> <!-- stack-trace -->
-                  <em>
-(Themes)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -197,7 +193,7 @@ Driver info: driver.version: unknown
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Viktoryia_Belaya@epam.com\AppData\Local\Temp\testng-eclipse--1718908522\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Viktoryia_Belaya@epam.com\AppData\Local\Temp\testng-eclipse--778385014\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -206,7 +202,7 @@ Driver info: driver.version: unknown
 &lt;suite name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.epam.test_gmail.ThemesTest4&quot;/&gt;
+      &lt;class name=&quot;com.epam.test_gmail.ForwardTest2&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -248,14 +244,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'changeTheme')
-data.setCell(0, 2, 'com.epam.test_gmail.ThemesTest4$BigAttachFileTest3')
-data.setCell(0, 3, 33204);
+data.setCell(0, 1, 'forward')
+data.setCell(0, 2, 'com.epam.test_gmail.ForwardTest2')
+data.setCell(0, 3, 48996);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 33 seconds</span>
+              <span class="suite-total-time">Total running time: 48 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -281,7 +277,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.epam.test_gmail.ThemesTest4$BigAttachFileTest3</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.epam.test_gmail.ForwardTest2</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
@@ -289,12 +285,14 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">changeTheme</span>
-                <span class="method-start">4683 ms</span>
+                <span class="method-name">forward</span>
+                <span class="method-start">4646 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
-                <span class="method-name">stopBrowser</span>
-                <span class="method-start">37899 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">afterClass</span>
+                <span class="method-start">53653 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

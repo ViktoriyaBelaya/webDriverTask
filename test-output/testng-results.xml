@@ -2,36 +2,32 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38352" started-at="2015-07-21T12:37:33Z" finished-at="2015-07-21T12:38:12Z">
+  <suite name="Default suite" duration-ms="69259" started-at="2015-07-27T11:39:19Z" finished-at="2015-07-27T11:40:28Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="38352" started-at="2015-07-21T12:37:33Z" finished-at="2015-07-21T12:38:12Z">
-      <class name="com.epam.test_gmail.ThemesTest4$BigAttachFileTest3">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.epam.test_gmail.ThemesTest4$BigAttachFileTest3@24c31811]" name="setUp" is-config="true" duration-ms="4679" started-at="2015-07-21T09:37:33Z" description="Init Browser" finished-at="2015-07-21T09:37:38Z">
+    <test name="Default test" duration-ms="69259" started-at="2015-07-27T11:39:19Z" finished-at="2015-07-27T11:40:28Z">
+      <class name="com.epam.test_gmail.ForwardTest2">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.epam.test_gmail.ForwardTest2@bbf4061]" name="setUp" is-config="true" duration-ms="4643" started-at="2015-07-27T08:39:19Z" description="Init Browser" finished-at="2015-07-27T08:39:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="changeTheme()[pri:0, instance:com.epam.test_gmail.ThemesTest4$BigAttachFileTest3@24c31811]" name="changeTheme" duration-ms="33204" started-at="2015-07-21T09:37:38Z" description="Themes" finished-at="2015-07-21T09:38:11Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="FAIL" signature="forward()[pri:0, instance:com.epam.test_gmail.ForwardTest2@bbf4061]" name="forward" duration-ms="48996" started-at="2015-07-27T08:39:24Z" finished-at="2015-07-27T08:40:13Z">
+          <exception class="org.openqa.selenium.ElementNotVisibleException">
             <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//iframe[@class='KA-JQ']"}
-Command duration or timeout: 20.13 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[Element is not currently visible and so may not be interacted with
+Command duration or timeout: 20.29 seconds
 Build info: version: '2.46.0', revision: '61506a4624b13675f24581e453592342b7485d71', time: '2015-06-04 10:22:50'
-System info: host: 'EPBYMINW3008', ip: '10.6.102.67', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
-*** Element info: {Using=xpath, value=//iframe[@class='KA-JQ']}
-Session ID: 0a4eefba-5e0a-4da7-8691-29b7fbf464ea
+System info: host: 'EPBYMINW3008', ip: '10.6.103.20', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+Session ID: b923adf6-2715-4630-921c-f6822eb1577e
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//iframe[@class='KA-JQ']"}
-Command duration or timeout: 20.13 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Command duration or timeout: 20.29 seconds
 Build info: version: '2.46.0', revision: '61506a4624b13675f24581e453592342b7485d71', time: '2015-06-04 10:22:50'
-System info: host: 'EPBYMINW3008', ip: '10.6.102.67', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
-*** Element info: {Using=xpath, value=//iframe[@class='KA-JQ']}
-Session ID: 0a4eefba-5e0a-4da7-8691-29b7fbf464ea
+System info: host: 'EPBYMINW3008', ip: '10.6.103.20', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+Session ID: b923adf6-2715-4630-921c-f6822eb1577e
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -41,18 +37,17 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy8.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:49)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:894)
-	at com.epam.gmail.pages.ThemesPage.clickButtonMyFhoto(ThemesPage.java:58)
-	at com.epam.gmail.user_action.UserAction.UploadPhotos(UserAction.java:242)
-	at com.epam.test_gmail.ThemesTest4$BigAttachFileTest3.changeTheme(ThemesTest4.java:23)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:269)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy8.click(Unknown Source)
+	at com.epam.gmail.pages.ForwardPage.clickRadioButtonForwardCopy(ForwardPage.java:107)
+	at com.epam.gmail.user_action.UserAction.clickRadioBtnFrwCopy(UserAction.java:287)
+	at com.epam.test_gmail.ForwardTest2.forward(ForwardTest2.java:29)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -77,24 +72,109 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//iframe[@class='KA-JQ']"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Caused by: org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
 Build info: version: '2.46.0', revision: '61506a4624b13675f24581e453592342b7485d71', time: '2015-06-04 10:22:50'
-System info: host: 'EPBYMINW3008', ip: '10.6.102.67', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+System info: host: 'EPBYMINW3008', ip: '10.6.103.20', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous692663330838091549webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous692663330838091549webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:603)
+	at <anonymous class>.fxdriver.preconditions.visible(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous5646230786037416535webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:9615)
+	at <anonymous class>.DelayedCommand.prototype.checkPreconditions_(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous5646230786037416535webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12265)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous5646230786037416535webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Viktoryia_Belaya@epam.com/AppData/Local/Temp/anonymous5646230786037416535webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:603)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.ElementNotVisibleException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- changeTheme -->
-        <test-method status="PASS" signature="stopBrowser()[pri:0, instance:com.epam.test_gmail.ThemesTest4$BigAttachFileTest3@24c31811]" name="stopBrowser" is-config="true" duration-ms="439" started-at="2015-07-21T09:38:11Z" description="Stop Browser" finished-at="2015-07-21T09:38:12Z">
+        </test-method> <!-- forward -->
+        <test-method status="FAIL" signature="afterClass()[pri:0, instance:com.epam.test_gmail.ForwardTest2@bbf4061]" name="afterClass" is-config="true" duration-ms="0" started-at="2015-07-27T08:40:13Z" finished-at="2015-07-27T08:40:13Z">
+          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
+            <message>
+              <![CDATA[Error communicating with the remote browser. It may have died.
+Build info: version: '2.46.0', revision: '61506a4624b13675f24581e453592342b7485d71', time: '2015-06-04 10:22:50'
+System info: host: 'EPBYMINW3008', ip: '10.6.103.20', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '2.46.0', revision: '61506a4624b13675f24581e453592342b7485d71', time: '2015-06-04 10:22:50'
+System info: host: 'EPBYMINW3008', ip: '10.6.103.20', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.click(Unknown Source)
+	at com.epam.gmail.pages.ForwardPage.deleteForwardUser(ForwardPage.java:74)
+	at com.epam.gmail.user_action.UserAction.deleteForwardUser(UserAction.java:198)
+	at com.epam.test_gmail.ForwardTest2.afterClass(ForwardTest2.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:517)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:140)
+	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:220)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
+	at org.testng.TestNG.run(TestNG.java:1032)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:161)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:168)
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:392)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:578)
+	... 34 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 49 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="SKIP" signature="stopBrowser()[pri:0, instance:com.epam.test_gmail.ForwardTest2@bbf4061]" name="stopBrowser" is-config="true" duration-ms="0" started-at="2015-07-27T08:40:28Z" description="Stop Browser" finished-at="2015-07-27T08:40:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopBrowser -->
-      </class> <!-- com.epam.test_gmail.ThemesTest4$BigAttachFileTest3 -->
+      </class> <!-- com.epam.test_gmail.ForwardTest2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

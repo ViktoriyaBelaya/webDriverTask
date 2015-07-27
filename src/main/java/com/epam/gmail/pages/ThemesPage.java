@@ -40,22 +40,30 @@ public class ThemesPage extends Page {
 
 		DriverUtils.waitElementVisible(driver, linkSettingThemes, 50);
 		linkSettingThemes.click();
+		System.out.println("not arrived 1");
 	}
 
 	public void goToUploadFhoto() {
 		DriverUtils.waitElementVisible(driver, uploadFhoto, 50);
 		uploadFhoto.click();
+		System.out.println("click uploadFhoto");
 	}
 
 	public void clickButtonChooseFhotoFromCompute() {
 		DriverUtils.waitElementVisible(driver, buttonChooseFhotoFromComputer,
 				50);
 		buttonChooseFhotoFromComputer.click();
+		System.out.println("click buttonChooseFhotoFromComputer");
 	}
 
 	public void clickButtonMyFhoto() {
+		//driver.switchTo().frame(frameForChangePhoto);
+		System.out.println("not arrived2");
+		DriverUtils.waitElementVisible(driver,buttonMyFhoto,100);
 		buttonMyFhoto.click();
+		System.out.println("not arrived3");
 		driver.switchTo().frame(frameForChangePhoto);
+		System.out.println("not arrived 4");
 	}
 
 	public void uploadPhotoFromComputer(long size) throws IOException,

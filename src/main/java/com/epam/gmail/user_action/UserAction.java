@@ -236,12 +236,26 @@ public class UserAction {
 		themesPage.openPage();
 	}
 	
-	public void UploadPhotos(){
+	public void UploadPhotos(long size) {
 		ThemesPage themesPage = new ThemesPage(driver);
 		themesPage.clickLinkSettingThemes();
 		themesPage.clickButtonMyFhoto();
 		themesPage.goToUploadFhoto();
 		themesPage.clickButtonChooseFhotoFromCompute();
+		try {
+			themesPage.uploadPhotoFromComputer(size);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean isErrorMassageAboutThemes(){
+		ThemesPage themesPage = new ThemesPage(driver);
+		return themesPage.isErrorMessageFormat();
 	}
 
 	public void addForwardUser(String user) {

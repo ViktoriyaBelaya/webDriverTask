@@ -72,6 +72,12 @@ public class UserAction {
 		TrashPage trashPage = new TrashPage(driver);
 		return trashPage.isMessageWithAttachInTrash(subject);
 	}
+	
+	public boolean isMessageWithEmoticons(String subject){
+		MainPage page = new MainPage(driver);
+		page.openPage();
+		return page.isMessageWithEmoticons(subject);
+	}
 
 	public boolean isMessageWithoutAttachInInboxAndNotMArkAsImportant(
 			String subject) {
@@ -100,7 +106,7 @@ public class UserAction {
 		MessagePage sendMessage = new MessagePage(driver);
 		sendMessage.openPage();
 		mainPage.clickButtonWriteMail();
-		sendMessage.writeMassege(driver, user);
+		sendMessage.writeMassegeTo(driver, user);
 		sendMessage.enterSubjectAndBobyOfLetter(subject, message);
 		sendMessage.sendMessage();
 		System.out.println("Message send");
@@ -112,7 +118,7 @@ public class UserAction {
 		MessagePage sendMessage = new MessagePage(driver);
 		sendMessage.openPage();
 		mainPage.clickButtonWriteMail();
-		sendMessage.writeMassege(driver, user);
+		sendMessage.writeMassegeTo(driver, user);
 		sendMessage.enterSubjectAndBobyOfLetter(subject, message);
 		try {
 			sendMessage.attachFile(size);
@@ -127,6 +133,17 @@ public class UserAction {
 			sendMessage.sendMessage();
 		System.out.println("Message send");
 	}
+	
+	public void sendMessageWithEmoticons(String user, String subject, String message){
+		MainPage mainPage = new MainPage(driver);
+		MessagePage sendMessage = new MessagePage(driver);
+		sendMessage.openPage();
+		mainPage.clickButtonWriteMail();
+		sendMessage.writeMassegeTo(driver, user);
+		sendMessage.enterSubjectAndBobyOfLetter(subject, message);
+		sendMessage.chooseEmoticonsIcon();
+		sendMessage.sendMessage();		
+	}
 
 	public void createMessageWithBigFile(String user, long size,
 			String subject, String message) {
@@ -134,7 +151,7 @@ public class UserAction {
 		MessagePage sendMessage = new MessagePage(driver);
 		sendMessage.openPage();
 		mainPage.clickButtonWriteMail();
-		sendMessage.writeMassege(driver, user);
+		sendMessage.writeMassegeTo(driver, user);
 		sendMessage.enterSubjectAndBobyOfLetter(subject, message);
 		try {
 			sendMessage.attachFile(size);
@@ -175,10 +192,10 @@ public class UserAction {
 		message.clickDeleteButtonMessage();
 	}
 
-	public void makeSpamLetter() {
-		MessagePage makespam = new MessagePage(driver);
-		makespam.openPage();
-		makespam.markLetterAsSpam(driver);
+	public void makeSpamLetter(String subject) {
+		MainPage page = new MainPage(driver);
+		page.isMessage(subject);
+		page.markLetterAsSpam(driver);
 		System.out.println("message in spam");
 	}
 

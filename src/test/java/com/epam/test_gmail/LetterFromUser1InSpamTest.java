@@ -16,7 +16,7 @@ public class LetterFromUser1InSpamTest extends BaseTest {
 		userAction.sendMessage(user2, subject, message);
 		userAction.deleteAllCookies();
 		userAction.loginUser(user2, password);
-		userAction.makeSpamLetter();
+		userAction.makeSpamLetter(subject);
 		userAction.deleteAllCookies();
 		userAction.loginUser(user1, password);
 		userAction.sendMessage(user2, subject, message);

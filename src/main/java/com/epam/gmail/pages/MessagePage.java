@@ -4,6 +4,8 @@ import java.awt.AWTException;
 import java.awt.datatransfer.StringSelection;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -23,6 +25,8 @@ public class MessagePage extends Page {
 	private final static String IMAGE_ATTACHMENT = "//img[@alt='Attachments']";
 	private final static String errorMessageAboutBigSizeFile = "//span[@class='Kj-JD-K7-K0'][contains(text(),'25')]";
 	private final static String INFO_ABOUT_IMPORTANT = "//span[contains(text(),'Отмечено как важное')]";
+	private final static String LIST_EMOTICONS = "//button[@class='a8m' ]";
+	private final static int COUNT_EMOTICONS =3; 
 
 	@FindBy(xpath = "//span[contains(text(),'Просмотреть настройки')]")
 	private WebElement buttonViewSettings;
@@ -81,6 +85,12 @@ public class MessagePage extends Page {
 	@FindBy(xpath = "//button[@name='cancel']")
 	private WebElement buttonCancelMessageAboutBiggerSizeFile;
 
+	@FindBy(xpath = "//div[@class ='QT aaA aMZ']")
+	private WebElement attachEmoticonsIcon;
+
+	@FindBy(xpath = "//button[@title='Эмоции']")
+	private WebElement emoticonsIcon;
+
 	public MessagePage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(this.driver, this);
@@ -89,6 +99,20 @@ public class MessagePage extends Page {
 
 	public void clickOK() {
 		buttonOK.click();
+	}
+
+	public void chooseEmoticonsIcon() {
+		attachEmoticonsIcon.click();
+		DriverUtils.waitElementVisible(driver, emoticonsIcon, 30);
+		emoticonsIcon.click();
+		List<WebElement> listEmoticons = driver.findElements(By
+				.xpath(LIST_EMOTICONS));
+		WebElement emoticon = null;
+		for (int i = 0; i < COUNT_EMOTICONS; i++) {
+			emoticon = listEmoticons.get(1+i);
+			emoticon.click();	
+			//listAttribute.add(emoticon.getAttribute(ATTRIBUTE));
+		}
 	}
 
 	public void selectAll() {
@@ -106,7 +130,7 @@ public class MessagePage extends Page {
 		DriverUtils.waitElementVisible(driver, messageDelete, 30);
 	}
 
-	public void writeMassege(WebDriver driver, String user) {
+	public void writeMassegeTo(WebDriver driver, String user) {
 		toInput.sendKeys(user);
 		DriverUtils.waitElementVisible(driver, subjectInput, 30);
 	}
@@ -119,15 +143,6 @@ public class MessagePage extends Page {
 	public void enterSubjectAndBobyOfLetter(String subject, String message) {
 		subjectInput.sendKeys(subject);
 		bodyMail.sendKeys(message);
-	}
-
-	public void markLetterAsSpam(WebDriver driver) {
-		DriverUtils.waitElementVisible(driver, newMessage, 60);
-		newMessage.click();
-		DriverUtils.waitElementVisible(driver, buttonElse, 100);
-		buttonElse.click();
-		spam.click();
-		DriverUtils.waitElementVisible(driver, spamMessage, 100);
 	}
 
 	public void confirmForwardFromUser() {
@@ -215,6 +230,12 @@ public class MessagePage extends Page {
 			return true;
 		}
 		return false;
+	}
+
+
+
+	public static int getCountEmoticons() {
+		return COUNT_EMOTICONS;
 	}
 
 	@Override

@@ -50,7 +50,7 @@ public class TrashPage extends Page {
 		}
 		return false;
 	}
-
+	
 	public boolean isMessageWithoutAttachInTrash(String subject) {
 
 		while (DriverUtils.isElementNotPresent(driver,
